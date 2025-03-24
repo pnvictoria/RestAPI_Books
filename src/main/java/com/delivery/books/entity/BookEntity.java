@@ -3,10 +3,7 @@ package com.delivery.books.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
@@ -20,4 +17,24 @@ public class BookEntity {
     private String name;
     private String auth;
 
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAuth() {
+        return auth;
+    }
+
+    @Override
+    public String toString() {
+        return "BookEntity{" +
+                "isbn='" + isbn + '\'' +
+                ", name='" + name + '\'' +
+                ", auth='" + auth + '\'' +
+                '}';
+    }
 }
