@@ -1,8 +1,8 @@
 package com.delivery.books.controller;
 
 import com.delivery.books.entity.BookEntity;
-import com.delivery.books.service.BookServise;
-import com.delivery.books.service.impl.BookServiseImpl;
+import com.delivery.books.service.BookService;
+import com.delivery.books.service.impl.BookServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,9 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("${application.endpoint.root}")
 public class BookController {
-    private final BookServise service;
+    private final BookService service;
 
-    public BookController(BookServiseImpl bookServise) {
+    public BookController(BookServiceImpl bookServise) {
         this.service = bookServise;
     }
 

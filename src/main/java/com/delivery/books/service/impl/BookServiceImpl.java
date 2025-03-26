@@ -2,18 +2,19 @@ package com.delivery.books.service.impl;
 
 import com.delivery.books.entity.BookEntity;
 import com.delivery.books.repository.BookRepository;
-import com.delivery.books.service.BookServise;
+import com.delivery.books.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Service
-public class BookServiseImpl implements BookServise {
+public class BookServiceImpl implements BookService {
     private final BookRepository repository;
 
     @Autowired
-    BookServiseImpl(BookRepository repository) {
+    BookServiceImpl(BookRepository repository) {
         this.repository = repository;
     }
 
@@ -23,7 +24,7 @@ public class BookServiseImpl implements BookServise {
     }
 
     @Override
-    public BookEntity read(String id) {
+    public BookEntity read(BigInteger id) {
         return repository.getReferenceById(id);
     }
 
